@@ -1,24 +1,16 @@
 object Raindrops {
     fun convert(input: Int): String {
         return buildString {
-            var isFactor = false
-            if (input % 3 == 0) {
-                append("Pling")
-                isFactor = true
+            with(input) {
+                if (isFactor(input, 3)) append("Pling")
+                if (isFactor(input, 5)) append("Plang")
+                if (isFactor(input, 7)) append("Plong")
+                if (isEmpty()) append(this)
             }
-            if (input % 5 == 0) {
-                append("Plang")
-                isFactor = true
-            }
-            if (input % 7 == 0) {
-                append("Plong")
-                isFactor = true
-            }
-
-            if (!isFactor) {
-                append(input)
-            }
-
         }
+    }
+
+    private fun isFactor(dividend: Int, divisor: Int): Boolean {
+        return if (divisor != 0) dividend % divisor == 0 else false
     }
 }
