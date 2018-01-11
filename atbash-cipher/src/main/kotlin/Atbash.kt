@@ -24,6 +24,5 @@ object Atbash {
 
     fun decode(input: String): String {
         return process(input, reversedMapping, false)
-
     }
 }
