@@ -1,3 +1,7 @@
+/**
+ * Interesting implementation: http://exercism.io/submissions/15278ed977694e2f8846ae1b51482d4e
+ *
+ */
 object Prime {
 
     fun nth(n: Int): Int {
