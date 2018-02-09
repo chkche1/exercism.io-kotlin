@@ -1,29 +1,28 @@
 object PrimeFactorCalculator {
 
+    fun primeFactors(n: Int): List<Int> = primeFactors(n.toLong()).map { it.toInt() }
+
     fun primeFactors(n: Long): List<Long> {
         val factors = mutableListOf<Long>()
 
         var running = n
         var prime = 2L
-        while (running != 1L) {
+        while (running >= 2L) {
             if (running % prime == 0L) {
                 factors.add(prime)
                 running /= prime
+            } else {
+                prime = getNextPrime(prime)
             }
-
-            prime = getNextPrime(prime)
         }
 
         return factors
     }
 
     private fun getNextPrime(n: Long): Long {
-        var p = n
-        if (p and 1 === 0L) {
-            p++
-        }
+        var p = n + 1
         while (!isPrime(p)) {
-            p += 2
+            p++
         }
         return p
     }
@@ -45,4 +44,5 @@ object PrimeFactorCalculator {
         }
         return true
     }
+    
 }
