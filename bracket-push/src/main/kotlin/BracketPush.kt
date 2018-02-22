@@ -4,6 +4,9 @@ private val OPEN = listOf('{', '[', '(')
 private val CLOSE = listOf('}', ']', ')')
 private val mapping = CLOSE.mapIndexed { index, c -> c to OPEN[index] }.toMap()
 
+/**
+ * More functional implementation: http://exercism.io/submissions/5a79599059b94aff841dd82d2c21a173
+ */
 object BracketPush {
 
     fun isValid(s: String): Boolean {
