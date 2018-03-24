@@ -1,6 +1,6 @@
 object BeerSong {
 
-    fun verses(n: Int, k: Int) = (n downTo k).joinToString(separator = "\n\n", postfix = "\n") { i -> verse(i) }
+    fun verses(n: Int, k: Int) = (n downTo k).joinToString(separator = "\n\n", postfix = "\n") { verse(it) }
 
     private fun verse(n: Int) = when (n) {
         0 -> "No more bottles of beer on the wall, no more bottles of beer.\nGo to the store and buy some more, 99 bottles of beer on the wall."
